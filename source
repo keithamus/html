@@ -90968,22 +90968,16 @@ dictionary <dfn dictionary>DragEventInit</dfn> : <span>MouseEventInit</span> {
 
    <li>
     <p>If <var>element</var>'s <span>opened in popover mode</span> is "<code data-x="">auto</code>"
-    or "<code data-x="">hint</code>", then:</p>
+    or "<code data-x="">hint</code>", then run <span data-x="hide-all-popovers-until">hide all
+    popovers until</span> given <var>element</var>, <var>focusPreviousElement</var>, and
+    <var>fireEvents</var>.</p>
+   </li>
 
-    <ol>
-     <li><p>Run <span data-x="hide-all-popovers-until">hide all popovers until</span> given
-     <var>element</var>, <var>focusPreviousElement</var>, and <var>fireEvents</var>.</p></li>
+   <li>
+    <p>If the result of running <span>check popover validity</span> given <var>element</var>,
+    true, <var>throwExceptions</var>, and null is false, then run <var>cleanupSteps</var> and
+    return.</p>
 
-     <li>
-      <p>If the result of running <span>check popover validity</span> given <var>element</var>,
-      true, and <var>throwExceptions</var> is false, then run <var>cleanupSteps</var> and
-      return.</p>
-
-      <p class="note"><span>Check popover validity</span> is called again because running <span
-      data-x="hide-all-popovers-until">hide all popovers until</span> could have disconnected
-      <var>element</var> or changed its <code data-x="attr-popover">popover</code> attribute.</p>
-     </li>
-    </ol>
    </li>
 
    <li><p>Let <var>autoPopoverListContainsElement</var> be true if <var>document</var>'s
