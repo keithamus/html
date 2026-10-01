@@ -3285,6 +3285,7 @@ a.setAttribute('href', 'https://example.com/'); // change the content attribute 
      <li><dfn data-x="concept-document-type" data-x-href="https://dom.spec.whatwg.org/#concept-document-type">document type</dfn> concept</li>
      <li><dfn data-x="concept-DocumentFragment-host" data-x-href="https://dom.spec.whatwg.org/#concept-documentfragment-host">host</dfn> concept</li>
      <li>The <dfn data-x-href="https://dom.spec.whatwg.org/#concept-shadow-root">shadow root</dfn> concept, and its <dfn data-x-href="https://dom.spec.whatwg.org/#shadowroot-delegates-focus">delegates focus</dfn>, <dfn data-x-href="https://dom.spec.whatwg.org/#shadowroot-available-to-element-internals">available to element internals</dfn>, <dfn data-x="shadow-serializable" data-x-href="https://dom.spec.whatwg.org/#shadowroot-serializable">serializable</dfn>, <dfn data-x-href="https://dom.spec.whatwg.org/#shadowroot-clonable">clonable</dfn>, <dfn data-x="shadow-root-custom-element-registry" data-x-href="https://dom.spec.whatwg.org/#shadowroot-custom-element-registry">custom element registry</dfn>, and <dfn data-x-href="https://dom.spec.whatwg.org/#shadowroot-keep-custom-element-registry-null">keep custom element registry null</dfn>.</li>
+     <li>The <dfn data-x="shadow-root-custom-attribute-registry" data-x-href="https://dom.spec.whatwg.org/#shadowroot-custom-attribute-registry">custom attribute registry</dfn> of a <span>shadow root</span></li>
      <li>The <dfn data-x-href="https://dom.spec.whatwg.org/#element-shadow-host">shadow host</dfn> concept</li>
      <li><dfn data-x-href="https://dom.spec.whatwg.org/#interface-htmlcollection"><code>HTMLCollection</code></dfn> interface, its
          <dfn data-x="dom-HTMLCollection-length" data-x-href="https://dom.spec.whatwg.org/#dom-htmlcollection-length"><code>length</code></dfn> attribute, and its
@@ -3310,6 +3311,10 @@ a.setAttribute('href', 'https://example.com/'); // change the content attribute 
      <li><dfn data-x="dom-Event-preventDefault" data-x-href="https://dom.spec.whatwg.org/#dom-event-preventdefault"><code>preventDefault()</code></dfn> method</li>
      <li><dfn data-x="dom-Element-id" data-x-href="https://dom.spec.whatwg.org/#dom-element-id"><code>id</code></dfn> attribute</li>
      <li><dfn data-x="dom-Element-setAttribute" data-x-href="https://dom.spec.whatwg.org/#dom-element-setattribute"><code>setAttribute()</code></dfn> method</li>
+     <li><dfn data-x="dom-Element-setAttributeNode" data-x-href="https://dom.spec.whatwg.org/#dom-element-setattributenode"><code>setAttributeNode()</code></dfn> method</li>
+     <li><dfn data-x="dom-Element-getAttributeNode" data-x-href="https://dom.spec.whatwg.org/#dom-element-getattributenode"><code>getAttributeNode()</code></dfn> method</li>
+     <li><dfn data-x="dom-Element-attributes" data-x-href="https://dom.spec.whatwg.org/#dom-element-attributes"><code>attributes</code></dfn> attribute</li>
+     <li><dfn data-x="dom-Document-createAttribute" data-x-href="https://dom.spec.whatwg.org/#dom-document-createattribute"><code>createAttribute()</code></dfn> method</li>
      <li><dfn data-x-href="https://dom.spec.whatwg.org/#dom-node-textcontent"><code>textContent</code></dfn> attribute</li>
      <li><dfn data-x="dom-ParentNode-children" data-x-href="https://dom.spec.whatwg.org/#dom-parentnode-children"><code>children</code></dfn> attribute</li>
 
@@ -3356,6 +3361,12 @@ a.setAttribute('href', 'https://example.com/'); // change the content attribute 
      <li>The <dfn data-x="concept-attribute-value" data-x-href="https://dom.spec.whatwg.org/#concept-attribute-value">value</dfn> concept for attributes</li>
      <li>The <dfn data-x="concept-attribute-local-name" data-x-href="https://dom.spec.whatwg.org/#concept-attribute-local-name">local name</dfn> concept for attributes</li>
      <li>The <dfn data-x="concept-attribute-namespace" data-x-href="https://dom.spec.whatwg.org/#concept-attribute-namespace">namespace</dfn> concept for attributes</li>
+    <li>The <dfn data-x="concept-attribute-namespace-prefix" data-x-href="https://dom.spec.whatwg.org/#concept-attribute-namespace-prefix">namespace prefix</dfn> concept for attributes</li>
+     <li>The <dfn data-x="concept-attribute-element" data-x-href="https://dom.spec.whatwg.org/#concept-attribute-element">element</dfn> concept for attributes</li>
+     <li>The concepts of an attribute's <dfn data-x="concept-attribute-custom-attribute-state" data-x-href="https://dom.spec.whatwg.org/#concept-attribute-custom-attribute-state">custom attribute state</dfn> and
+                          <dfn data-x="concept-attribute-custom-attribute-definition" data-x-href="https://dom.spec.whatwg.org/#concept-attribute-custom-attribute-definition">custom attribute definition</dfn>, and of
+                          <dfn data-x="concept-attribute-custom" data-x-href="https://dom.spec.whatwg.org/#concept-attribute-custom">custom</dfn> attributes</li>
+     <li>The <dfn data-x="look up a custom attribute registry" data-x-href="https://dom.spec.whatwg.org/#look-up-a-custom-attribute-registry">look up a custom attribute registry</dfn> algorithm</li>
      <li>The <dfn data-x-href="https://dom.spec.whatwg.org/#concept-element-attribute">attribute list</dfn> concept</li>
      <li>The <dfn data-x="concept-cd-data" data-x-href="https://dom.spec.whatwg.org/#concept-cd-data">data</dfn> of a <code>CharacterData</code> node and its
              <dfn data-x-href="https://dom.spec.whatwg.org/#concept-cd-replace">replace data</dfn> algorithm</li>
@@ -3398,6 +3409,7 @@ a.setAttribute('href', 'https://example.com/'); // change the content attribute 
      <li>The <dfn data-x="document's character encoding" data-x-href="https://dom.spec.whatwg.org/#concept-document-encoding">encoding</dfn> (herein the <i>character encoding</i>),
              <dfn data-x="concept-document-mode" data-x-href="https://dom.spec.whatwg.org/#concept-document-mode">mode</dfn>,
              <dfn data-x="document-custom-element-registry" data-x-href="https://dom.spec.whatwg.org/#document-custom-element-registry">custom element registry</dfn>,
+             <dfn data-x="document-custom-attribute-registry" data-x-href="https://dom.spec.whatwg.org/#document-custom-attribute-registry">custom attribute registry</dfn>,
              <dfn data-x="concept-document-allow-declarative-shadow-roots" data-x-href="https://dom.spec.whatwg.org/#concept-document-allow-declarative-shadow-roots">allow declarative shadow roots</dfn>, and
              <dfn data-x="concept-document-content-type" data-x-href="https://dom.spec.whatwg.org/#concept-document-content-type">content type</dfn> of a <code>Document</code></li>
      <li>The distinction between <dfn data-x-href="https://dom.spec.whatwg.org/#xml-document">XML documents</dfn> and
@@ -3436,6 +3448,7 @@ a.setAttribute('href', 'https://example.com/'); // change the content attribute 
                       <dfn data-x="concept-element-namespace-prefix" data-x-href="https://dom.spec.whatwg.org/#concept-element-namespace-prefix">namespace prefix</dfn>,
                       <dfn data-x="concept-element-local-name" data-x-href="https://dom.spec.whatwg.org/#concept-element-local-name">local name</dfn>,
                       <dfn data-x="element-custom-element-registry" data-x-href="https://dom.spec.whatwg.org/#element-custom-element-registry">custom element registry</dfn>,
+                      <dfn data-x="element-custom-attribute-registry" data-x-href="https://dom.spec.whatwg.org/#element-custom-attribute-registry">custom attribute registry</dfn>,
                       <dfn data-x="concept-element-custom-element-definition" data-x-href="https://dom.spec.whatwg.org/#concept-element-custom-element-definition">custom element definition</dfn>, and
                       <dfn data-x="concept-element-is-value" data-x-href="https://dom.spec.whatwg.org/#concept-element-is-value"><code data-x="">is</code> value</dfn></li>
 
@@ -13419,6 +13432,153 @@ customElements.define("auto-embiggened", AutoEmbiggenedImage, { extends: "img" }
 const image = new AutoEmbiggenedImage(15, 20);
 console.assert(image.width === 150);
 console.assert(image.height === 200);</code></pre>
+  </div>
+
+  </div>
+
+  <h4 id="attr-constructor">The <code>Attr</code> constructor</h4>
+
+  <div w-nodev>
+
+  <p>To support the <a href="#custom-attributes">custom attributes</a> feature, the
+  <code>Attr</code> interface has special constructor behavior. This is indicated via the <dfn
+  extended-attribute data-lt="CustomAttrConstructor"
+  data-x="CustomAttrConstructor"><code>[CustomAttrConstructor]</code></dfn> IDL
+  <span>extended attribute</span>. It indicates that the interface object for the given interface
+  will have a specific behavior when called, as defined in detail below.</p>
+
+  <p>The <code data-x="CustomAttrConstructor">[CustomAttrConstructor]</code> extended
+  attribute must take no arguments, and must only appear on <span data-x="constructor
+  operation">constructor operations</span>. It must appear only once on a constructor operation,
+  and the interface must contain only the single, annotated constructor operation, and no others.
+  The annotated constructor operation must be declared to take no arguments.</p>
+
+  <div algorithm>
+  <p>Interfaces declared with constructor operations that are annotated with the <code
+  data-x="CustomAttrConstructor">[CustomAttrConstructor]</code> extended attribute have
+  the following <span>overridden constructor steps</span>:</p>
+
+  <ol>
+   <li>
+    <p>If <span>NewTarget</span> is equal to the <span>active function object</span>, then throw a
+    <code>TypeError</code>.</p>
+
+    <p class="note">This prevents <code data-x="">new Attr()</code> from creating an attribute
+    with no name. Attributes are created with <code
+    data-x="dom-Document-createAttribute">createAttribute()</code> or by constructing a <span>custom
+    attribute constructor</span>.</p>
+   </li>
+
+   <li><p>Let <var>registry</var> be null.</p></li>
+
+   <li><p>If the <span>surrounding agent</span>'s <span>active custom attribute constructor
+   map</span>[<span>NewTarget</span>] <span data-x="map exists">exists</span>, then set
+   <var>registry</var> to the <span>surrounding agent</span>'s <span>active custom attribute
+   constructor map</span>[<span>NewTarget</span>].</p></li>
+
+   <li><p>Otherwise, set <var>registry</var> to the <span>current global object</span>'s <span
+   data-x="concept-document-window">associated <code>Document</code></span>'s <span
+   data-x="document-custom-attribute-registry">custom attribute registry</span>.</p></li>
+
+   <li><p>If <var>registry</var> is null, then throw a <code>TypeError</code>.</p></li>
+
+   <li>
+    <p>Let <var>definition</var> be the item in <var>registry</var>'s <span>custom attribute
+    definition set</span> with <span
+    data-x="concept-custom-attribute-definition-constructor">constructor</span> equal to
+    <span>NewTarget</span>. If there is no such item, then throw a <code>TypeError</code>.</p>
+
+    <p class="note">Since there can be no item in <var>registry</var>'s <span>custom attribute
+    definition set</span> with a <span
+    data-x="concept-custom-attribute-definition-constructor">constructor</span> of undefined, this
+    step also prevents the <code>Attr</code> constructor from being called as a function (since in
+    that case <span>NewTarget</span> will be undefined).</p>
+   </li>
+
+   <li>
+    <p>If <var>definition</var>'s <span
+    data-x="concept-custom-attribute-definition-construction-stack">construction stack</span> is
+    empty:</p>
+
+    <ol>
+     <li><p>Let <var>attribute</var> be the result of <span data-x="internally create a new object
+     implementing the interface">internally creating a new object implementing the interface</span>
+     <code>Attr</code>, given the <span>current realm</span> and <span>NewTarget</span>.</p></li>
+
+     <li><p>Set <var>attribute</var>'s <span>node document</span> to the <span>current global
+     object</span>'s <span data-x="concept-document-window">associated
+     <code>Document</code></span>.</p></li>
+
+     <li><p>Set <var>attribute</var>'s <span data-x="concept-attribute-namespace">namespace</span>
+     and <span data-x="concept-attribute-namespace-prefix">namespace prefix</span> to null.</p></li>
+
+     <li><p>Set <var>attribute</var>'s <span data-x="concept-attribute-local-name">local name</span>
+     to <var>definition</var>'s <span data-x="concept-custom-attribute-definition-name">name</span>.</p></li>
+
+     <li><p>Set <var>attribute</var>'s <span data-x="concept-attribute-value">value</span> to the
+     empty string.</p></li>
+
+     <li><p>Set <var>attribute</var>'s <span data-x="concept-attribute-custom-attribute-state">custom
+     attribute state</span> to "<code data-x="">custom</code>".</p></li>
+
+     <li><p>Set <var>attribute</var>'s <span
+     data-x="concept-attribute-custom-attribute-definition">custom attribute definition</span> to
+     <var>definition</var>.</p></li>
+
+     <li><p>Return <var>attribute</var>.</p></li>
+    </ol>
+
+    <p class="note">This occurs when author script constructs a new custom attribute directly,
+    e.g., via <code data-x="">new MyCustomAttribute()</code>. The resulting attribute has no <span
+    data-x="concept-attribute-element">element</span>; it can be attached to one using <code
+    data-x="dom-Element-setAttributeNode">setAttributeNode()</code>.</p>
+   </li>
+
+   <li><p>Let <var>prototype</var> be ? <span data-x="js-Get">Get</span>(<span>NewTarget</span>,
+   "prototype").</p></li>
+
+   <li>
+    <p>If <var>prototype</var> <span data-x="js-Object">is not an Object</span>:</p>
+
+    <ol>
+     <li><p>Let <var>realm</var> be ? <span>GetFunctionRealm</span>(<span>NewTarget</span>).</p></li>
+
+     <li><p>Set <var>prototype</var> to the <span>interface prototype object</span> of
+     <var>realm</var> whose interface is <code>Attr</code>.</p></li>
+    </ol>
+   </li>
+
+   <li><p>Let <var>attribute</var> be the last entry in <var>definition</var>'s <span
+   data-x="concept-custom-attribute-definition-construction-stack">construction stack</span>.</li>
+
+   <li>
+    <p>If <var>attribute</var> is an <span data-x="concept-already-constructed-marker"><i>already
+    constructed</i> marker</span>, then throw a <code>TypeError</code>.</p>
+
+    <p class="note">As with <a href="#html-element-constructors">HTML element constructors</a>,
+    this can occur when the author code inside the <span>custom attribute constructor</span>
+    creates another instance of the class being constructed before calling <code
+    data-x="">super()</code>, or calls <code data-x="">super()</code> twice.</p>
+   </li>
+
+   <li><p>Perform ? <var>attribute</var>.[[SetPrototypeOf]](<var>prototype</var>).</p></li>
+
+   <li><p>Replace the last entry in <var>definition</var>'s <span
+   data-x="concept-custom-attribute-definition-construction-stack">construction stack</span> with
+   an <span data-x="concept-already-constructed-marker"><i>already constructed</i>
+   marker</span>.</p></li>
+
+   <li>
+    <p>Return <var>attribute</var>.</p>
+
+    <p class="note">This step is normally reached when <span
+    data-x="custom-attribute-upgrades">upgrading</span> a custom attribute; the existing attribute
+    is returned, so that the <code data-x="">super()</code> call inside the <span>custom attribute
+    constructor</span> assigns that existing attribute to <b>this</b>. The attribute's <span
+    data-x="concept-attribute-value">value</span> and <span
+    data-x="concept-attribute-element">element</span> are already available at this point.</p>
+   </li>
+  </ol>
   </div>
 
   </div>
@@ -79354,9 +79514,9 @@ customElements.define("x-foo", class extends HTMLElement {
   which is initially empty. A <span>similar-origin window agent</span>'s <dfn>current element
   queue</dfn> is the <span>element queue</span> at the top of its <span>custom element reactions
   stack</span>. Each item in the stack is an <dfn>element queue</dfn>, which is initially empty as
-  well. Each item in an <span>element queue</span> is an element. (The elements are not necessarily
-  <span data-x="concept-element-custom">custom</span> yet, since this queue is used for <span
-  data-x="custom-element-upgrades">upgrades</span> as well.)</p>
+  well. Each item in an <span>element queue</span> is an element or an attribute. (These are not
+  necessarily <span data-x="concept-element-custom">custom</span> yet, since this queue is used for
+  <span data-x="custom-element-upgrades">upgrades</span> as well.)</p>
 
   <p>Each <span>custom element reactions stack</span> has an associated <dfn>backup element
   queue</dfn>, which is an initially-empty <span>element queue</span>. Elements are pushed onto the
@@ -79368,13 +79528,15 @@ customElements.define("x-foo", class extends HTMLElement {
   <span>custom element reactions stack</span> also has a <dfn>processing the backup element
   queue</dfn> flag, initially unset.</p>
 
-  <p>All elements have an associated <dfn>custom element reaction queue</dfn>, initially empty. Each
-  item in the <span>custom element reaction queue</span> is of one of two types:</p>
+  <p>All elements and attributes have an associated <dfn>custom element reaction queue</dfn>,
+  initially empty. Each item in the <span>custom element reaction queue</span> is of one of two
+  types:</p>
 
   <ul>
    <li><p>An <dfn>upgrade reaction</dfn>, which will <span
-   data-x="custom-element-upgrades">upgrade</span> the custom element and contains a <span>custom
-   element definition</span>; or</p></li>
+   data-x="custom-element-upgrades">upgrade</span> the custom element or <span
+   data-x="custom-attribute-upgrades">custom attribute</span> and contains a <span>custom element
+   definition</span> or <span>custom attribute definition</span>; or</p></li>
 
    <li><p>A <dfn>callback reaction</dfn>, which will call a lifecycle callback, and contains a
    callback function as well as a list of arguments.</p></li>
@@ -79385,8 +79547,8 @@ customElements.define("x-foo", class extends HTMLElement {
   <p><img src="/images/custom-element-reactions.svg" style="width: 80%; max-width: 580px;" alt="A custom element reactions stack consists of a stack of element queues. Zooming in on a particular queue, we see that it contains a number of elements (in our example, &lt;x-a&gt;, then &lt;x-b&gt;, then &lt;x-c&gt;). Any particular element in the queue then has a custom element reaction queue. Zooming in on the custom element reaction queue, we see that it contains a variety of queued-up reactions (in our example, upgrade, then attribute changed, then another attribute changed, then connected)." class="darkmode-aware"></p>
 
   <div algorithm>
-  <p>To <dfn>enqueue an element on the appropriate element queue</dfn>, given an element
-  <var>element</var>, run the following steps:</p>
+  <p>To <dfn>enqueue an element on the appropriate element queue</dfn>, given an element or
+  attribute <var>element</var>, run the following steps:</p>
 
   <ol>
    <li><p>Let <var>reactionsStack</var> be <var>element</var>'s <span>relevant agent</span>'s
@@ -79515,7 +79677,7 @@ customElements.define("x-foo", class extends HTMLElement {
 
     <ol>
      <li><p>Let <var>element</var> be the result of <span data-x="dequeue">dequeuing</span>
-     from <var>queue</var>.</p></li>
+     from <var>queue</var>. It is an element or an attribute.</p></li>
 
      <li><p>Let <var>reactions</var> be <var>element</var>'s <span>custom element reaction
      queue</span>.</p></li>
@@ -79531,14 +79693,15 @@ customElements.define("x-foo", class extends HTMLElement {
         <dl class="switch">
          <dt><span>upgrade reaction</span></dt>
          <dd>
-          <p><span data-x="concept-upgrade-an-element">Upgrade</span> <var>element</var> using
-          <var>reaction</var>'s <span>custom element definition</span>.</p>
+          <p>If <var>element</var> is an element, then <span
+          data-x="concept-upgrade-an-element">upgrade</span> <var>element</var> using
+          <var>reaction</var>'s <span>custom element definition</span>. Otherwise, <span
+          data-x="concept-upgrade-an-attribute">upgrade</span> the attribute <var>element</var>
+          using <var>reaction</var>'s <span>custom attribute definition</span>.</p>
 
           <p>If this throws an exception, catch it, and <span data-x="report an
-          exception">report</span> it for <var>reaction</var>'s <span>custom element
-          definition</span>'s <span
-          data-x="concept-custom-element-definition-constructor">constructor</span>'s corresponding
-          JavaScript object's <span>associated realm</span>'s <span
+          exception">report</span> it for <var>reaction</var>'s definition's constructor's
+          corresponding JavaScript object's <span>associated realm</span>'s <span
           data-x="concept-realm-global">global object</span>.</p>
          </dd>
 
@@ -80142,6 +80305,1001 @@ this._internals.states.delete("loading");
 this._internals.states.delete("interactive");
 this._internals.states.add("complete");</code></pre>
   </div>
+
+  <h3 split-filename="custom-attributes" id="custom-attributes">Custom attributes</h3>
+
+  <h4 id="custom-attributes-intro">Introduction</h4>
+
+  <!-- NON-NORMATIVE SECTION -->
+
+  <p><span data-x="custom attribute">Custom attributes</span> provide a way for authors to build
+  reusable behaviors that can be applied to any element, by defining a subclass of
+  <code>Attr</code> and registering it under a hyphenated attribute name. Where a <span>custom
+  element</span> models something an element <em>is</em>, a <span>custom attribute</span> models
+  something an element <em>has</em>. This mirrors how many built-in behaviors, such as those
+  triggered by the <code data-x="attr-popover">popover</code>, <code
+  data-x="attr-hidden">hidden</code>, or <code data-x="attr-title">title</code> attributes, apply
+  to elements of many kinds.</p>
+
+  <div class="example">
+   <p>For example, the following code defines a <code data-x="">persist-value</code> attribute
+   that saves a form control's value under the given key as the user edits it, and restores it
+   when the control is next shown:</p>
+
+   <pre><code class="js">class PersistValue extends Attr {
+  connectedCallback() {
+    const saved = localStorage.getItem(this.value);
+    if (saved !== null) this.ownerElement.value = saved;
+    this.ownerElement.addEventListener("input", this);
+  }
+
+  disconnectedCallback() {
+    this.ownerElement.removeEventListener("input", this);
+  }
+
+  attributeChangedCallback(oldValue, newValue) {
+    if (oldValue !== null) localStorage.removeItem(oldValue);
+  }
+
+  handleEvent() {
+    localStorage.setItem(this.value, this.ownerElement.value);
+  }
+}
+
+customAttributes.define("persist-value", PersistValue);</code></pre>
+
+   <p>It can then be used in HTML on any form control:</p>
+
+   <pre><code class="html">&lt;input name="q" persist-value="search-draft">
+&lt;textarea name="comment" persist-value="comment-draft">&lt;/textarea>
+&lt;select name="sort" persist-value="sort-preference">...&lt;/select></code></pre>
+
+   <p>Without the attribute, each of these controls would need to be wrapped in, or replaced by,
+   a <span>custom element</span> to gain the same behavior. The <code>Attr</code> node for each
+   <code data-x="">persist-value</code> attribute is an instance of <code
+   data-x="">PersistValue</code>, and can be retrieved with <code
+   data-x="dom-Element-getAttributeNode">getAttributeNode()</code> or via <code
+   data-x="dom-Element-attributes">attributes</code>. The lifecycle callbacks are invoked as the
+   attribute is added to, changed on, and removed from elements, and as those elements are
+   inserted into and removed from the document.</p>
+  </div>
+
+  <p>Like <span data-x="custom element">custom elements</span>, <span data-x="custom
+  attribute">custom attributes</span> can be <span data-x="custom-attribute-upgrades">upgraded</span>
+  after the fact: an attribute that appears in markup before its definition is registered is
+  upgraded to the defined class once <code
+  data-x="dom-CustomAttributeRegistry-define">define()</code> is called, and the same
+  <code>Attr</code> node identity is preserved across the upgrade.</p>
+
+  <h4 id="custom-attributes-core-concepts">Core concepts</h4>
+
+  <p>A <dfn export>custom attribute</dfn> is an attribute that is <span
+  data-x="concept-attribute-custom">custom</span>. Informally, this means that its constructor and
+  prototype are defined by the author, instead of by the user agent. This author-supplied
+  constructor function is called the <dfn export>custom attribute constructor</dfn>.</p>
+
+  <p><span data-x="custom attribute">Custom attributes</span> always have a null <span
+  data-x="concept-attribute-namespace">namespace</span>. Attributes in other namespaces are never
+  <span data-x="concept-attribute-custom">custom</span>, even if their <span
+  data-x="concept-attribute-local-name">local name</span> matches a <span data-x="custom attribute
+  definition">defined</span> name.</p>
+
+  <div algorithm>
+  <p>A string <var>name</var> is a <dfn export>valid custom attribute name</dfn> if all of the
+  following are true:</p>
+
+  <ul>
+   <li>
+    <p><var>name</var> is a <span>valid attribute local name</span>;</p>
+
+    <p class="note">This ensures the custom attribute can be created with <code
+    data-x="dom-Document-createAttribute">createAttribute()</code> and set with <code
+    data-x="dom-Element-setAttribute">setAttribute()</code>.</p>
+   </li>
+
+   <li>
+    <p><var>name</var>'s 0th <span>code point</span> is an <span>ASCII lower alpha</span>;</p>
+   </li>
+
+   <li>
+    <p><var>name</var> does not contain any <span data-x="ASCII upper alpha">ASCII upper
+    alphas</span>;</p>
+
+    <p class="note">This ensures the user agent can always treat HTML attribute names
+    ASCII-case-insensitively.</p>
+   </li>
+
+   <li>
+    <p><var>name</var> contains a U+002D (-);</p>
+
+    <p class="note">This is used for namespacing and to ensure forward compatibility, since new
+    attributes added to HTML, SVG, or MathML avoid hyphenated names going forward.</p>
+   </li>
+
+   <li>
+    <p><var>name</var> does not <span data-x="starts with">start with</span> "<code
+    data-x="">aria-</code>", "<code data-x="">data-</code>", "<code data-x="">xml</code>", or
+    "<code data-x="">xlink</code>"; and</p>
+
+    <p class="note">These prefixes are reserved for <cite>ARIA</cite>, <code
+    data-x="attr-data-*">data-*</code> attributes, and the XML and XLink namespaces. <ref>ARIA</ref>
+    <ref>XML</ref></p>
+   </li>
+
+   <li>
+    <p><var>name</var> is not "<code data-x="attr-form-accept-charset">accept-charset</code>" or
+    "<code data-x="attr-meta-http-equiv">http-equiv</code>".</p>
+
+    <p class="note">These are the hyphen-containing attribute names defined by this
+    specification.</p>
+   </li>
+  </ul>
+  </div>
+
+  <div w-nodev>
+
+  <hr>
+
+  <p>A <dfn export>custom attribute definition</dfn> describes a <span>custom attribute</span> and
+  consists of:</p>
+
+  <dl>
+   <dt>A <dfn data-x="concept-custom-attribute-definition-name" export for="custom attribute
+   definition">name</dfn></dt>
+   <dd>A <span>valid custom attribute name</span></dd>
+
+   <dt>A <dfn data-x="concept-custom-attribute-definition-constructor" export for="custom
+   attribute definition">constructor</dfn></dt>
+   <dd>A Web IDL <code>CustomAttributeConstructor</code> callback function type value wrapping
+   the <span>custom attribute constructor</span></dd>
+
+   <dt>A collection of <dfn
+   data-x="concept-custom-attribute-definition-lifecycle-callbacks">lifecycle
+   callbacks</dfn></dt>
+   <dd>A map, whose keys are the strings "<code data-x="">connectedCallback</code>", "<code
+   data-x="">disconnectedCallback</code>", "<code data-x="">connectedMoveCallback</code>", "<code
+   data-x="">adoptedCallback</code>", and "<code data-x="">attributeChangedCallback</code>". The
+   corresponding values are either a Web IDL
+   <code data-x="idl-Function">Function</code> callback function type value, or null. By default
+   the value of each entry is null.</dd>
+
+   <dt>A <dfn data-x="concept-custom-attribute-definition-construction-stack">construction
+   stack</dfn></dt>
+   <dd>A list, initially empty, that is manipulated by the <span
+   data-x="concept-upgrade-an-attribute">upgrade an attribute</span> algorithm and the <a
+   href="#attr-constructor"><code>Attr</code> constructor</a>. Each entry in the list will be
+   either an attribute or an <span data-x="concept-already-constructed-marker"><i>already
+   constructed</i> marker</span>.</dd>
+  </dl>
+
+  <div algorithm>
+  <p>To <dfn export>look up a custom attribute definition</dfn>, given null or a
+  <code>CustomAttributeRegistry</code> object <var>registry</var>, string-or-null
+  <var>namespace</var>, and string <var>localName</var>, perform the following steps. They will
+  return either a <span>custom attribute definition</span> or null:</p>
+
+  <ol>
+   <li><p>If <var>registry</var> is null, then return null.</p></li>
+
+   <li><p>If <var>namespace</var> is not null, then return null.</p></li>
+
+   <li><p>If <var>registry</var>'s <span>custom attribute definition set</span> <span data-x="list
+   contains">contains</span> an item with <span
+   data-x="concept-custom-attribute-definition-name">name</span> equal to <var>localName</var>,
+   then return that item.</p></li>
+
+   <li><p>Return null.</p></li>
+  </ol>
+  </div>
+
+  </div>
+
+  <h4 id="custom-attributes-api">The <code>CustomAttributeRegistry</code> interface</h4>
+
+  <div w-nodev>
+
+  <p>Each <span>similar-origin window agent</span> has an associated <dfn export
+  for="similar-origin window agent">active custom attribute constructor map</dfn>, which is a
+  <span data-x="ordered map">map</span> of constructors to <code>CustomAttributeRegistry</code>
+  objects.</p>
+
+  <div algorithm>
+  <p>The <code>Window</code> <dfn attribute for="Window"><code
+  data-x="dom-window-customAttributes">customAttributes</code></dfn> getter steps are:</p>
+
+  <ol>
+   <li>
+    <p><span>Assert</span>: <span>this</span>'s <span data-x="concept-document-window">associated
+    <code>Document</code></span>'s <span data-x="document-custom-attribute-registry">custom
+    attribute registry</span> is a <code>CustomAttributeRegistry</code> object.</p>
+
+    <p class="note">A <code>Window</code>'s <span data-x="concept-document-window">associated
+    <code>Document</code></span> is always created with a new
+    <code>CustomAttributeRegistry</code> object.</p>
+   </li>
+
+   <li><p>Return <span>this</span>'s <span data-x="concept-document-window">associated
+   <code>Document</code></span>'s <span data-x="document-custom-attribute-registry">custom
+   attribute registry</span>.</p></li>
+  </ol>
+  </div>
+
+  <pre><code class="idl" var-scope>[Exposed=Window]
+interface <dfn interface>CustomAttributeRegistry</dfn> {
+  <span data-x="dom-CustomAttributeRegistry">constructor</span>();
+
+  [<span>CEReactions</span>] undefined <span data-x="dom-CustomAttributeRegistry-define">define</span>(DOMString <var>name</var>, <span>CustomAttributeConstructor</span> <var>constructor</var>);
+  (<span>CustomAttributeConstructor</span> or undefined) <span data-x="dom-CustomAttributeRegistry-get">get</span>(DOMString <var>name</var>);
+  DOMString? <span data-x="dom-CustomAttributeRegistry-getName">getName</span>(CustomAttributeConstructor <var>constructor</var>);
+  <span data-x="idl-Promise">Promise</span>&lt;<span>CustomAttributeConstructor</span>&gt; <span data-x="dom-CustomAttributeRegistry-whenDefined">whenDefined</span>(DOMString <var>name</var>);
+  [<span>CEReactions</span>] undefined <span data-x="dom-CustomAttributeRegistry-upgrade">upgrade</span>(<span>Node</span> <var>root</var>);
+  [<span>CEReactions</span>] undefined <span data-x="dom-CustomAttributeRegistry-initialize">initialize</span>(<span>Node</span> <var>root</var>);
+};
+
+callback <dfn callback>CustomAttributeConstructor</dfn> = <span>Attr</span> ();</code></pre>
+
+  <p>Every <code>CustomAttributeRegistry</code> has an <dfn data-x="CustomAttributeRegistry is
+  scoped" export for="CustomAttributeRegistry">is scoped</dfn>, a boolean, initially false.</p>
+
+  <p>Every <code>CustomAttributeRegistry</code> has a <dfn data-x="CustomAttributeRegistry scoped
+  document set" export for="CustomAttributeRegistry">scoped document set</dfn>, a <span>set</span> of
+  <code>Document</code> objects, initially « ».</p>
+
+  <p>Every <code>CustomAttributeRegistry</code> has a <dfn>custom attribute definition set</dfn>,
+  a <span>set</span> of <span data-x="custom attribute definition">custom attribute
+  definitions</span>, initially « ». Lookup of items in this <span>set</span> uses their <span
+  data-x="concept-custom-attribute-definition-name">name</span> or <span
+  data-x="concept-custom-attribute-definition-constructor">constructor</span>.</p>
+
+  <p>Every <code>CustomAttributeRegistry</code> also has an <dfn>attribute definition is
+  running</dfn> boolean which is used to prevent reentrant invocations of <span>attribute
+  definition</span>. It is initially false.</p>
+
+  <p>Every <code>CustomAttributeRegistry</code> also has a <dfn>when-defined attribute promise
+  map</dfn>, a <span data-x="ordered map">map</span> of <span data-x="valid custom attribute
+  name">valid custom attribute names</span> to promises. It is used to implement the <code
+  data-x="dom-CustomAttributeRegistry-whenDefined">whenDefined()</code> method.</p>
+
+  </div>
+
+  <dl class="domintro">
+   <dt><code data-x=""><var>registry</var> = <var>window</var>.<span subdfn data-x="dom-window-customAttributes">customAttributes</span></code></dt>
+   <dd>Returns the global's associated <code>Document</code>'s <code>CustomAttributeRegistry</code>
+   object.</dd>
+
+   <dt><code data-x=""><var>registry</var> = new <span subdfn data-x="dom-CustomAttributeRegistry">CustomAttributeRegistry</span>()</code></dt>
+   <dd>Constructs a new <code>CustomAttributeRegistry</code> object, for scoped usage.</dd>
+
+   <dt><code data-x=""><var>registry</var>.<span subdfn data-x="dom-CustomAttributeRegistry-define">define</span>(<var>name</var>,
+   <var>constructor</var>)</code></dt>
+   <dd>Defines a new <span>custom attribute</span>, mapping the given name to the given
+   constructor. A <span>"<code>SyntaxError</code>"</span> <code>DOMException</code> will be thrown
+   if <var>name</var> is not a <span>valid custom attribute name</span>, and a
+   <span>"<code>NotSupportedError</code>"</span> <code>DOMException</code> will be thrown if
+   <var>name</var> or <var>constructor</var> is already defined in <var>registry</var>.</dd>
+
+   <dt><code data-x=""><var>registry</var>.<span subdfn data-x="dom-CustomAttributeRegistry-get">get</span>(<var>name</var>)</code></dt>
+   <dd>Retrieves the <span>custom attribute constructor</span> defined for the given <span
+   data-x="concept-custom-attribute-definition-name">name</span>. Returns undefined if there is no
+   <span>custom attribute definition</span> with the given <span
+   data-x="concept-custom-attribute-definition-name">name</span>.</dd>
+
+   <dt><code data-x=""><var>registry</var>.<span subdfn data-x="dom-CustomAttributeRegistry-getName">getName</span>(<var>constructor</var>)</code></dt>
+   <dd>Retrieves the given name for a <span>custom attribute</span> defined for the given <span
+   data-x="concept-custom-attribute-definition-constructor">constructor</span>. Returns null if
+   there is no <span>custom attribute definition</span> with the given <span
+   data-x="concept-custom-attribute-definition-constructor">constructor</span>.</dd>
+
+   <dt><code data-x=""><var>registry</var>.<span subdfn data-x="dom-CustomAttributeRegistry-whenDefined">whenDefined</span>(<var>name</var>)</code></dt>
+   <dd>Returns a promise that will be fulfilled with the <span>custom attribute</span>'s
+   constructor when a <span>custom attribute</span> becomes defined with the given name. (If such a
+   <span>custom attribute</span> is already defined, the returned promise will be immediately
+   fulfilled.) Returns a promise rejected with a <span>"<code>SyntaxError</code>"</span>
+   <code>DOMException</code> if not given a <span>valid custom attribute name</span>.</dd>
+
+   <dt><code data-x=""><var>registry</var>.<span subdfn data-x="dom-CustomAttributeRegistry-upgrade">upgrade</span>(<var>root</var>)</code></dt>
+   <dd><span data-x="concept-try-upgrade-attribute">Tries to upgrade</span> all attributes of all
+   <span>shadow-including inclusive descendant</span> elements of <var>root</var>, even if they are
+   not <span>connected</span>.</dd>
+
+   <dt><code data-x=""><var>registry</var>.<span subdfn data-x="dom-CustomAttributeRegistry-initialize">initialize</span>(<var>root</var>)</code></dt>
+   <dd>Each <span>inclusive descendant</span> of <var>root</var> with a null <span
+   data-x="element-custom-attribute-registry">custom attribute registry</span> will have it updated
+   to this <code>CustomAttributeRegistry</code> object. A
+   <span>"<code>NotSupportedError</code>"</span> <code>DOMException</code> will be thrown if this
+   <code>CustomAttributeRegistry</code> object is not for scoped usage and either <var>root</var>
+   is a <code>Document</code> node or <var>root</var>'s <span>node document</span>'s <span
+   data-x="document-custom-attribute-registry">custom attribute registry</span> is not this
+   <code>CustomAttributeRegistry</code> object.</dd>
+  </dl>
+
+  <div algorithm>
+  <p w-nodev>The <dfn
+  data-x="dom-CustomAttributeRegistry"><code>new CustomAttributeRegistry()</code></dfn>
+  constructor steps are to set <span>this</span>'s <span data-x="CustomAttributeRegistry is
+  scoped">is scoped</span> to true.</p>
+  </div>
+
+  <p><dfn>Attribute definition</dfn> is a process of adding a <span>custom attribute
+  definition</span> to the <code>CustomAttributeRegistry</code>. This is accomplished by the <code
+  data-x="dom-CustomAttributeRegistry-define">define()</code> method.</p>
+
+  <div w-nodev>
+
+  <div algorithm>
+  <p>The <dfn method for="CustomAttributeRegistry"><code
+  data-x="dom-CustomAttributeRegistry-define">define(<var>name</var>,
+  <var>constructor</var>)</code></dfn> method steps are:</p>
+
+  <ol>
+   <li><p>If <span>IsConstructor</span>(<var>constructor</var>) is false, then throw a
+   <code>TypeError</code>.</p></li>
+
+   <li><p>If <var>name</var> is not a <span>valid custom attribute name</span>, then throw a
+   <span>"<code>SyntaxError</code>"</span> <code>DOMException</code>.</p></li>
+
+   <li><p>If <span>this</span>'s <span>custom attribute definition set</span> <span data-x="list
+   contains">contains</span> an item with <span
+   data-x="concept-custom-attribute-definition-name">name</span> <var>name</var>, then throw a
+   <span>"<code>NotSupportedError</code>"</span> <code>DOMException</code>.</p></li>
+
+   <li><p>If <span>this</span>'s <span>custom attribute definition set</span> <span data-x="list
+   contains">contains</span> an item with <span
+   data-x="concept-custom-attribute-definition-constructor">constructor</span>
+   <var>constructor</var>, then throw a <span>"<code>NotSupportedError</code>"</span>
+   <code>DOMException</code>.</p></li>
+
+   <li><p>If <span>this</span>'s <span>attribute definition is running</span> is true, then throw
+   a <span>"<code>NotSupportedError</code>"</span> <code>DOMException</code>.</p></li>
+
+   <li><p>Set <span>this</span>'s <span>attribute definition is running</span> to true.</p></li>
+
+   <li>
+    <p>Run the following steps while catching any exceptions:</p>
+
+    <ol>
+     <li><p>Let <var>prototype</var> be ? <span data-x="js-Get">Get</span>(<var>constructor</var>,
+     "prototype").</p></li>
+
+     <li><p>If <var>prototype</var> <span data-x="js-Object">is not an Object</span>, then throw a
+     <code>TypeError</code> exception.</p></li>
+
+     <li><p>Let <var>lifecycleCallbacks</var> be the <span>ordered map</span> «[ "<code
+     data-x="">connectedCallback</code>" → null, "<code data-x="">disconnectedCallback</code>" →
+     null, "<code data-x="">connectedMoveCallback</code>" → null, "<code
+     data-x="">adoptedCallback</code>" → null, "<code data-x="">attributeChangedCallback</code>" →
+     null ]».</p>
+
+     <li>
+      <p>For each <var>callbackName</var> of <span data-x="map get the keys">the keys</span> of
+      <var>lifecycleCallbacks</var>:</p>
+
+      <ol>
+       <li><p>Let <var>callbackValue</var> be ? <span data-x="js-Get">Get</span>(<var>prototype</var>,
+       <var>callbackName</var>).</p>
+
+       <li><p>If <var>callbackValue</var> is not undefined, then <span data-x="map set">set</span>
+       <var>lifecycleCallbacks</var>[<var>callbackName</var>] to the result of <span
+       data-x="concept-idl-convert">converting</span> <var>callbackValue</var> to the Web IDL <code
+       data-x="idl-Function">Function</code> callback type.</p></li>
+      </ol>
+     </li>
+    </ol>
+
+    <p>Then, regardless of whether the above steps threw an exception or not: set
+    <span>this</span>'s <span>attribute definition is running</span> to false.</p>
+
+    <p>Finally, if the steps threw an exception, rethrow that exception.</p>
+   </li>
+
+   <li><p>Let <var>definition</var> be a new <span>custom attribute definition</span> with <span
+   data-x="concept-custom-attribute-definition-name">name</span> <var>name</var>, <span
+   data-x="concept-custom-attribute-definition-constructor">constructor</span>
+   <var>constructor</var>, and <span
+   data-x="concept-custom-attribute-definition-lifecycle-callbacks">lifecycle callbacks</span>
+   <var>lifecycleCallbacks</var>.</p></li>
+
+   <li><p><span data-x="set append">Append</span> <var>definition</var> to <span>this</span>'s
+   <span>custom attribute definition set</span>.</p></li>
+
+   <li><p>If <span>this</span>'s <span data-x="CustomAttributeRegistry is scoped">is scoped</span>
+   is true, then for each <var>document</var> of <span>this</span>'s <span
+   data-x="CustomAttributeRegistry scoped document set">scoped document set</span>: <span>upgrade
+   particular attributes within a document</span> given <span>this</span>, <var>document</var>,
+   and <var>definition</var>.</p></li>
+
+   <li><p>Otherwise, <span>upgrade particular attributes within a document</span> given
+   <span>this</span>, <span>this</span>'s <span>relevant global object</span>'s <span
+   data-x="concept-document-window">associated <code>Document</code></span>, and
+   <var>definition</var>.</p></li>
+
+   <li>
+    <p>If <span>this</span>'s <span>when-defined attribute promise map</span>[<var>name</var>]
+    <span data-x="map exists">exists</span>:</p>
+
+    <ol>
+     <li><p>Resolve <span>this</span>'s <span>when-defined attribute promise
+     map</span>[<var>name</var>] with <var>constructor</var>.</p></li>
+
+     <li><p><span data-x="map remove">Remove</span> <span>this</span>'s <span>when-defined
+     attribute promise map</span>[<var>name</var>].</p></li>
+    </ol>
+   </li>
+  </ol>
+  </div>
+
+  <div algorithm>
+  <p>To <dfn>upgrade particular attributes within a document</dfn> given a
+  <code>CustomAttributeRegistry</code> object <var>registry</var>, a <code>Document</code> object
+  <var>document</var>, and a <span>custom attribute definition</span> <var>definition</var>:</p>
+
+  <ol>
+   <li>
+    <p>For each element <var>element</var> that is a <span data-x="shadow-including
+    descendant">shadow-including descendant</span> of <var>document</var>, in
+    <span>shadow-including tree order</span>:</p>
+
+    <ol>
+     <li><p>If the result of <span data-x="look up a custom attribute registry">looking up a custom
+     attribute registry</span> given <var>element</var> is not <var>registry</var>, then
+     <span>continue</span>.</p></li>
+
+     <li><p>For each <var>attribute</var> of <var>element</var>'s <span>attribute list</span> whose
+     <span data-x="concept-attribute-namespace">namespace</span> is null and whose <span
+     data-x="concept-attribute-local-name">local name</span> is <var>definition</var>'s <span
+     data-x="concept-custom-attribute-definition-name">name</span>: <span>enqueue a custom
+     attribute upgrade reaction</span> given <var>attribute</var> and
+     <var>definition</var>.</p></li>
+    </ol>
+   </li>
+  </ol>
+
+  <p class="note">Only attributes of <span>connected</span> elements are upgraded here. Attributes
+  of elements that are not <span>connected</span> are upgraded when their element becomes <span
+  data-x="becomes connected">connected</span>, or when <code
+  data-x="dom-CustomAttributeRegistry-upgrade">upgrade()</code> is called.</p>
+  </div>
+
+  <div algorithm>
+  <p>The <dfn method for="CustomAttributeRegistry"><code
+  data-x="dom-CustomAttributeRegistry-get">get(<var>name</var>)</code></dfn> method steps
+  are:</p>
+
+  <ol>
+   <li><p>If <span>this</span>'s <span>custom attribute definition set</span> <span data-x="list
+   contains">contains</span> an item with <span
+   data-x="concept-custom-attribute-definition-name">name</span> <var>name</var>, then return that
+   item's <span data-x="concept-custom-attribute-definition-constructor">constructor</span>.</p></li>
+
+   <li><p>Return undefined.</p></li>
+  </ol>
+  </div>
+
+  <div algorithm>
+  <p>The <dfn method for="CustomAttributeRegistry"><code
+  data-x="dom-CustomAttributeRegistry-getName">getName(<var>constructor</var>)</code></dfn> method
+  steps are:</p>
+
+  <ol>
+   <li><p>If <span>this</span>'s <span>custom attribute definition set</span> <span data-x="list
+   contains">contains</span> an item with <span
+   data-x="concept-custom-attribute-definition-constructor">constructor</span>
+   <var>constructor</var>, then return that item's <span
+   data-x="concept-custom-attribute-definition-name">name</span>.</p></li>
+
+   <li><p>Return null.</p></li>
+  </ol>
+  </div>
+
+  <div algorithm>
+  <p>The <dfn method for="CustomAttributeRegistry"><code
+  data-x="dom-CustomAttributeRegistry-whenDefined">whenDefined(<var>name</var>)</code></dfn>
+  method steps are:</p>
+
+  <ol>
+   <li><p>If <var>name</var> is not a <span>valid custom attribute name</span>, then return <span>a
+   promise rejected with</span> a <span>"<code>SyntaxError</code>"</span>
+   <code>DOMException</code>.</p></li>
+
+   <li><p>If <span>this</span>'s <span>custom attribute definition set</span> <span data-x="list
+   contains">contains</span> an item with <span
+   data-x="concept-custom-attribute-definition-name">name</span> <var>name</var>, then return
+   <span>a promise resolved with</span> that item's <span
+   data-x="concept-custom-attribute-definition-constructor">constructor</span>.</p></li>
+
+   <li><p>If <span>this</span>'s <span>when-defined attribute promise map</span>[<var>name</var>]
+   does not <span data-x="map exists">exist</span>, then <span data-x="map set">set</span>
+   <span>this</span>'s <span>when-defined attribute promise map</span>[<var>name</var>] to a new
+   promise.</p></li>
+
+   <li><p>Return <span>this</span>'s <span>when-defined attribute promise
+   map</span>[<var>name</var>].</p></li>
+  </ol>
+  </div>
+
+  <div algorithm>
+  <p>The <dfn method for="CustomAttributeRegistry"><code
+  data-x="dom-CustomAttributeRegistry-upgrade">upgrade(<var>root</var>)</code></dfn> method steps
+  are:</p>
+
+  <ol>
+   <li>
+    <p>For each <span>shadow-including inclusive descendant</span> <var>candidate</var> of
+    <var>root</var>, in <span>shadow-including tree order</span>:</p>
+
+    <ol>
+     <li><p>If <var>candidate</var> is not an <code>Element</code> node, then
+     <span>continue</span>.</p></li>
+
+     <li><p>If the result of <span data-x="look up a custom attribute registry">looking up a custom
+     attribute registry</span> given <var>candidate</var> is not <span>this</span>, then
+     <span>continue</span>.</p></li>
+
+     <li><p>For each <var>attribute</var> of <var>candidate</var>'s <span>attribute list</span>:
+     <span data-x="concept-try-upgrade-attribute">try to upgrade</span>
+     <var>attribute</var>.</p></li>
+    </ol>
+  </ol>
+  </div>
+
+  </div>
+
+  <div class="example">
+   <p>The <code data-x="dom-CustomAttributeRegistry-upgrade">upgrade()</code> method allows
+   upgrading of attributes at will. Normally attributes are automatically upgraded when their
+   element becomes <span>connected</span>, but this method can be used if you need to upgrade
+   before you're ready to connect the element.</p>
+
+   <pre><code class="js">const el = document.createElement("div");
+el.setAttribute("spider-man", "");
+
+class SpiderMan extends Attr {}
+customAttributes.define("spider-man", SpiderMan);
+
+console.assert(!(el.getAttributeNode("spider-man") instanceof SpiderMan)); // not yet upgraded
+
+customAttributes.upgrade(el);
+console.assert(el.getAttributeNode("spider-man") instanceof SpiderMan);    // upgraded!</code></pre>
+  </div>
+
+  <div w-nodev>
+
+  <div algorithm>
+  <p>The <dfn method for="CustomAttributeRegistry"><code
+  data-x="dom-CustomAttributeRegistry-initialize">initialize(<var>root</var>)</code></dfn> method
+  steps are:</p>
+
+  <ol>
+   <li><p>If <span>this</span>'s <span data-x="CustomAttributeRegistry is scoped">is scoped</span>
+   is false and either <var>root</var> is a <code>Document</code> node or <var>root</var>'s
+   <span>node document</span>'s <span data-x="document-custom-attribute-registry">custom attribute
+   registry</span> is not <span>this</span>, then throw a
+   <span>"<code>NotSupportedError</code>"</span> <code>DOMException</code>.</p></li>
+
+   <li><p>If <var>root</var> is a <code>Document</code> node whose <span
+   data-x="document-custom-attribute-registry">custom attribute registry</span> is null, then set
+   <var>root</var>'s <span data-x="document-custom-attribute-registry">custom attribute
+   registry</span> to <span>this</span>.</p></li>
+
+   <li><p>Otherwise, if <var>root</var> is a <code>ShadowRoot</code> node whose <span
+   data-x="shadow-root-custom-attribute-registry">custom attribute registry</span> is null, then
+   set <var>root</var>'s <span data-x="shadow-root-custom-attribute-registry">custom attribute
+   registry</span> to <span>this</span>.</p></li>
+
+   <li>
+    <p>For each <span>inclusive descendant</span> <var>inclusiveDescendant</var> of <var>root</var>,
+    in <span>tree order</span>:</p>
+
+    <ol>
+     <li><p>If <var>inclusiveDescendant</var> is not an <code>Element</code> node, then
+     <span>continue</span>.</p></li>
+
+     <li>
+      <p>If <var>inclusiveDescendant</var>'s <span data-x="element-custom-attribute-registry">custom
+      attribute registry</span> is null:</p>
+
+      <ol>
+       <li><p>Set <var>inclusiveDescendant</var>'s <span
+       data-x="element-custom-attribute-registry">custom attribute registry</span> to
+       <span>this</span>.</p></li>
+
+       <li><p>If <span>this</span>'s <span data-x="CustomAttributeRegistry is scoped">is
+       scoped</span> is true, then <span data-x="set append">append</span>
+       <var>inclusiveDescendant</var>'s <span>node document</span> to <span>this</span>'s <span
+       data-x="CustomAttributeRegistry scoped document set">scoped document set</span>.</p></li>
+      </ol>
+     </li>
+
+     <li><p>If <var>inclusiveDescendant</var>'s <span
+     data-x="element-custom-attribute-registry">custom attribute registry</span> is not
+     <span>this</span>, then <span>continue</span>.</p></li>
+
+     <li><p>For each <var>attribute</var> of <var>inclusiveDescendant</var>'s <span>attribute
+     list</span>: <span data-x="concept-try-upgrade-attribute">try to upgrade</span>
+     <var>attribute</var>.</p></li>
+    </ol>
+   </li>
+  </ol>
+  </div>
+
+  <p class="note">As with an element's <span data-x="element-custom-element-registry">custom
+  element registry</span>, once the custom attribute registry of a node is initialized to a
+  <code>CustomAttributeRegistry</code> object, it intentionally cannot be changed any further.</p>
+
+
+  <h4><dfn data-x="custom-attribute-upgrades">Upgrades</dfn></h4>
+
+  <div algorithm>
+  <p>To <dfn data-x="concept-upgrade-an-attribute" export>upgrade an attribute</dfn>, given as
+  input a <span>custom attribute definition</span> <var>definition</var> and an attribute
+  <var>attribute</var>, run the following steps:</p>
+
+  <ol>
+   <li>
+    <p>If <var>attribute</var>'s <span data-x="concept-attribute-custom-attribute-state">custom
+    attribute state</span> is not "<code data-x="">undefined</code>", then return.</p>
+
+    <p class="note">As with <span data-x="concept-upgrade-an-element">upgrading an element</span>,
+    this can occur due to reentrant invocation of this algorithm, or because the same attribute
+    was enqueued for upgrade more than once.</p>
+   </li>
+
+   <li><p>Set <var>attribute</var>'s <span
+   data-x="concept-attribute-custom-attribute-definition">custom attribute definition</span> to
+   <var>definition</var>.</p></li>
+
+   <li>
+    <p>Set <var>attribute</var>'s <span data-x="concept-attribute-custom-attribute-state">custom
+    attribute state</span> to "<code data-x="">failed</code>".</p>
+
+    <p class="note">It will be set to "<code data-x="">custom</code>" <a
+    href="#concept-upgrade-an-attribute-set-state-to-custom">after the upgrade succeeds</a>. For
+    now, we set it to "<code data-x="">failed</code>" so that any reentrant invocations will hit the
+    above early-exit step.</p>
+   </li>
+
+   <li><p><span>Enqueue a custom attribute callback reaction</span> with <var>attribute</var>,
+   callback name "<code data-x="">attributeChangedCallback</code>", and « null,
+   <var>attribute</var>'s <span data-x="concept-attribute-value">value</span> ».</p></li>
+
+   <li><p>If <var>attribute</var>'s <span data-x="concept-attribute-element">element</span> is
+   non-null and <span>connected</span>, then <span>enqueue a custom attribute callback
+   reaction</span> with <var>attribute</var>, callback name "<code
+   data-x="">connectedCallback</code>", and « ».</p></li>
+
+   <li><p>Add <var>attribute</var> to the end of <var>definition</var>'s <span
+   data-x="concept-custom-attribute-definition-construction-stack">construction stack</span>.</p></li>
+
+   <li><p>Let <var>C</var> be <var>definition</var>'s <span
+   data-x="concept-custom-attribute-definition-constructor">constructor</span>.</p></li>
+
+   <li><p>Let <var>registry</var> be the result of <span data-x="look up a custom attribute
+   registry">looking up a custom attribute registry</span> given <var>attribute</var>'s <span
+   data-x="concept-attribute-element">element</span>, if that is non-null; otherwise
+   <var>attribute</var>'s <span>node document</span>'s <span
+   data-x="document-custom-attribute-registry">custom attribute registry</span>.</p></li>
+
+   <li><p>Let <var>previousRegistry</var> be the <span>surrounding agent</span>'s <span>active
+   custom attribute constructor map</span>[<var>C</var>] <span data-x="map with default">with
+   default</span> null.</p></li>
+
+   <li><p><span data-x="map set">Set</span> the <span>surrounding agent</span>'s <span>active
+   custom attribute constructor map</span>[<var>C</var>] to <var>registry</var>.</p></li>
+
+   <li>
+    <p>Run the following steps while catching any exceptions:</p>
+
+    <ol>
+     <li><p>Set <var>attribute</var>'s <span data-x="concept-attribute-custom-attribute-state">custom
+     attribute state</span> to "<code data-x="">precustomized</code>".</p></li>
+
+     <li>
+      <p>Let <var>constructResult</var> be the result of <span
+      data-x="es-constructing-callback-functions">constructing</span> <var>C</var>, with no
+      arguments.</p>
+
+      <p class="note">The <a href="#attr-constructor"><code>Attr</code> constructor</a> returns
+      <var>attribute</var> from the <code data-x="">super()</code> call, so <var>attribute</var>'s
+      <span data-x="concept-attribute-value">value</span> and <span
+      data-x="concept-attribute-element">element</span> are available to <var>C</var>.</p>
+     </li>
+
+     <li>
+      <p>If <span>SameValue</span>(<var>constructResult</var>, <var>attribute</var>) is false, then
+      throw a <code>TypeError</code>.</p>
+
+      <p class="note">This can occur if <var>C</var> constructs another instance of the same custom
+      attribute before calling <code data-x="">super()</code>, or if <var>C</var> uses JavaScript's
+      <code data-x="">return</code>-override feature to return an arbitrary <code>Attr</code>
+      object from the constructor.</p>
+     </li>
+    </ol>
+
+    <p>Then, perform the following steps, regardless of whether the above steps threw an exception
+    or not:</p>
+
+    <ol>
+     <li><p>If <var>previousRegistry</var> is null, then <span data-x="map remove">remove</span> the
+     <span>surrounding agent</span>'s <span>active custom attribute constructor
+     map</span>[<var>C</var>].</p></li>
+
+     <li><p>Otherwise, <span data-x="map set">set</span> the <span>surrounding agent</span>'s
+     <span>active custom attribute constructor map</span>[<var>C</var>] to
+     <var>previousRegistry</var>.</p></li>
+
+     <li><p>Remove the last entry from the end of <var>definition</var>'s <span
+     data-x="concept-custom-attribute-definition-construction-stack">construction
+     stack</span>.</p></li>
+    </ol>
+
+    <p>Finally, if the above steps threw an exception:</p>
+
+    <ol>
+     <li><p>Set <var>attribute</var>'s <span
+     data-x="concept-attribute-custom-attribute-definition">custom attribute definition</span> to
+     null.</p></li>
+
+     <li><p>Set <var>attribute</var>'s <span data-x="concept-attribute-custom-attribute-state">custom
+     attribute state</span> to "<code data-x="">failed</code>".</p></li>
+
+     <li><p>Empty <var>attribute</var>'s <span>custom element reaction queue</span>.</p>
+
+     <li><p>Rethrow the exception (thus terminating this algorithm).</p></li>
+    </ol>
+
+    <p class="note">A "<code data-x="">failed</code>" attribute is never upgraded again, and none
+    of its lifecycle callbacks are invoked, even if its value later changes.</p>
+   </li>
+
+   <li id="concept-upgrade-an-attribute-set-state-to-custom"><p>Set <var>attribute</var>'s <span
+   data-x="concept-attribute-custom-attribute-state">custom attribute state</span> to "<code
+   data-x="">custom</code>".</p></li>
+  </ol>
+  </div>
+
+  <div algorithm>
+  <p>To <dfn data-x="concept-try-upgrade-attribute" export>try to upgrade an attribute</dfn>
+  given an attribute <var>attribute</var>:</p>
+
+  <ol>
+   <li><p>Let <var>element</var> be <var>attribute</var>'s <span
+   data-x="concept-attribute-element">element</span>.</p></li>
+
+   <li><p>If <var>element</var> is null, then return.</p></li>
+
+   <li><p>If <var>attribute</var>'s <span data-x="concept-attribute-custom-attribute-state">custom
+   attribute state</span> is not "<code data-x="">undefined</code>", then return.</p></li>
+
+   <li><p>Let <var>registry</var> be the result of <span data-x="look up a custom attribute
+   registry">looking up a custom attribute registry</span> given <var>element</var>.</p></li>
+
+   <li><p>Let <var>definition</var> be the result of <span data-x="look up a custom attribute
+   definition">looking up a custom attribute definition</span> given <var>registry</var>,
+   <var>attribute</var>'s <span data-x="concept-attribute-namespace">namespace</span>, and
+   <var>attribute</var>'s <span data-x="concept-attribute-local-name">local name</span>.</p></li>
+
+   <li><p>If <var>definition</var> is not null, then <span>enqueue a custom attribute upgrade
+   reaction</span> given <var>attribute</var> and <var>definition</var>.</p></li>
+  </ol>
+  </div>
+
+  <div algorithm>
+  <p>To <dfn export>construct a custom attribute</dfn> given an attribute <var>attribute</var>, a
+  <span>custom attribute definition</span> <var>definition</var>, and a
+  <code>CustomAttributeRegistry</code> object <var>registry</var>:</p>
+
+  <ol>
+   <li><p><span>Assert</span>: <var>attribute</var>'s <span
+   data-x="concept-attribute-element">element</span> is null.</p></li>
+
+   <li><p>Set <var>attribute</var>'s <span
+   data-x="concept-attribute-custom-attribute-definition">custom attribute definition</span> to
+   <var>definition</var>.</p></li>
+
+   <li><p>Set <var>attribute</var>'s <span data-x="concept-attribute-custom-attribute-state">custom
+   attribute state</span> to "<code data-x="">precustomized</code>".</p></li>
+
+   <li><p>Add <var>attribute</var> to the end of <var>definition</var>'s <span
+   data-x="concept-custom-attribute-definition-construction-stack">construction stack</span>.</p></li>
+
+   <li><p>Let <var>C</var> be <var>definition</var>'s <span
+   data-x="concept-custom-attribute-definition-constructor">constructor</span>.</p></li>
+
+   <li><p>Let <var>previousRegistry</var> be the <span>surrounding agent</span>'s <span>active
+   custom attribute constructor map</span>[<var>C</var>] <span data-x="map with default">with
+   default</span> null.</p></li>
+
+   <li><p><span data-x="map set">Set</span> the <span>surrounding agent</span>'s <span>active
+   custom attribute constructor map</span>[<var>C</var>] to <var>registry</var>.</p></li>
+
+   <li>
+    <p>Run the following steps while catching any exceptions:</p>
+
+    <ol>
+     <li><p>Let <var>constructResult</var> be the result of <span
+     data-x="es-constructing-callback-functions">constructing</span> <var>C</var>, with no
+     arguments.</p></li>
+
+     <li><p>If <span>SameValue</span>(<var>constructResult</var>, <var>attribute</var>) is false,
+     then throw a <code>TypeError</code>.</p></li>
+    </ol>
+
+    <p>Then, perform the following steps, regardless of whether the above steps threw an exception
+    or not:</p>
+
+    <ol>
+     <li><p>If <var>previousRegistry</var> is null, then <span data-x="map remove">remove</span> the
+     <span>surrounding agent</span>'s <span>active custom attribute constructor
+     map</span>[<var>C</var>].</p></li>
+
+     <li><p>Otherwise, <span data-x="map set">set</span> the <span>surrounding agent</span>'s
+     <span>active custom attribute constructor map</span>[<var>C</var>] to
+     <var>previousRegistry</var>.</p></li>
+
+     <li><p>Remove the last entry from the end of <var>definition</var>'s <span
+     data-x="concept-custom-attribute-definition-construction-stack">construction
+     stack</span>.</p></li>
+    </ol>
+
+    <p>Finally, if the above steps threw an exception:</p>
+
+    <ol>
+     <li><p>Set <var>attribute</var>'s <span
+     data-x="concept-attribute-custom-attribute-definition">custom attribute definition</span> to
+     null.</p></li>
+
+     <li><p>Set <var>attribute</var>'s <span data-x="concept-attribute-custom-attribute-state">custom
+     attribute state</span> to "<code data-x="">failed</code>".</p></li>
+
+     <li><p>Rethrow the exception (thus terminating this algorithm).</p></li>
+    </ol>
+   </li>
+
+   <li><p>Set <var>attribute</var>'s <span data-x="concept-attribute-custom-attribute-state">custom
+   attribute state</span> to "<code data-x="">custom</code>".</p></li>
+  </ol>
+
+  <p class="note">This algorithm is used by <code
+  data-x="dom-Document-createAttribute">createAttribute()</code> to synchronously construct a
+  <span>custom attribute</span> that is not yet attached to any element. Since the attribute has
+  no <span data-x="concept-attribute-element">element</span>, no lifecycle callbacks are enqueued;
+  they will be enqueued when the attribute is <span data-x="concept-element-attributes-append">
+  appended</span> to an element.</p>
+  </div>
+
+  </div>
+
+  <h4 id="custom-attribute-reactions">Custom attribute reactions</h4>
+
+  <div algorithm>
+  <p>A <span>custom attribute</span> possesses the ability to respond to certain occurrences by
+  running author code:</p>
+
+  <ul>
+   <li><p>When <span data-x="custom-attribute-upgrades">upgraded</span>, its <span data-x="custom
+   attribute constructor">constructor</span> is run, with no arguments.</p></li>
+
+   <li><p>When it is <span data-x="concept-element-attributes-append">appended</span> to a
+   <span>connected</span> element, or its <span data-x="concept-attribute-element">element</span>
+   <span>becomes connected</span>, its <code data-x="">connectedCallback</code> is called, with
+   no arguments.</p></li>
+
+   <li><p>When it is <span data-x="concept-element-attributes-remove">removed</span> from a
+   <span>connected</span> element, or its <span data-x="concept-attribute-element">element</span>
+   <span>becomes disconnected</span>, its <code data-x="">disconnectedCallback</code> is called,
+   with no arguments.</p></li>
+
+   <li><p>When its <span data-x="concept-attribute-element">element</span> is <span
+   data-x="concept-node-move-ext">moved</span>, its <code data-x="">connectedMoveCallback</code>
+   is called, with no arguments.</p></li>
+
+   <li><p>When its <span data-x="concept-attribute-element">element</span> is <span
+   data-x="concept-node-adopt">adopted</span> into a new document, its <code
+   data-x="">adoptedCallback</code> is called, given the old document and new document as
+   arguments.</p></li>
+
+   <li><p>When it is <span data-x="concept-element-attributes-change">changed</span>, <span
+   data-x="concept-element-attributes-append">appended</span>, <span
+   data-x="concept-element-attributes-remove">removed</span>, or <span
+   data-x="concept-element-attributes-replace">replaced</span>, its <code
+   data-x="">attributeChangedCallback</code> is called, given its old value and new value as
+   arguments. (The old or new value is considered to be null when the attribute is appended or
+   removed, respectively.) Unlike a <span>custom element</span>'s <code
+   data-x="">attributeChangedCallback</code>, no name or namespace is passed: a <span>custom
+   attribute</span> always knows its own <span data-x="concept-attribute-local-name">local
+   name</span>, and its <span data-x="concept-attribute-namespace">namespace</span> is always
+   null.</p></li>
+  </ul>
+
+  <p>We call these reactions collectively <dfn data-x="concept-custom-attribute-reaction">custom
+  attribute reactions</dfn>.</p>
+  </div>
+
+  <p><span data-x="concept-custom-attribute-reaction">Custom attribute reactions</span> are
+  invoked using the same machinery as <span data-x="concept-custom-element-reaction">custom
+  element reactions</span>: they are enqueued on the attribute's <span>custom element reaction
+  queue</span>, the attribute is added to the <span>current element queue</span>, and the
+  reactions run just before returning to user script, in the order in which their triggering
+  actions occurred. Reactions for an element and for its attributes share a single ordering, so a
+  <span>custom element</span>'s <code data-x="">attributeChangedCallback</code> and a
+  <span>custom attribute</span>'s <code data-x="">attributeChangedCallback</code> for the same
+  change are invoked in the order in which they were enqueued.</p>
+
+  <div w-nodev>
+
+  <div algorithm>
+  <p>To <dfn export>enqueue a custom attribute callback reaction</dfn>, given an attribute
+  <var>attribute</var>, a callback name <var>callbackName</var>, and a list of arguments
+  <var>args</var>, run the following steps:</p>
+
+  <ol>
+   <li><p>Let <var>definition</var> be <var>attribute</var>'s <span
+   data-x="concept-attribute-custom-attribute-definition">custom attribute definition</span>.</p>
+
+   <li><p>If <var>definition</var> is null, then return.</p></li>
+
+   <li><p>Let <var>callback</var> be the value of the entry in <var>definition</var>'s <span
+   data-x="concept-custom-attribute-definition-lifecycle-callbacks">lifecycle callbacks</span>
+   with key <var>callbackName</var>.</p></li>
+
+   <li>
+    <p>If <var>callbackName</var> is "<code data-x="">connectedMoveCallback</code>" and
+    <var>callback</var> is null:</p>
+
+    <ol>
+     <li><p>Let <var>disconnectedCallback</var> be the value of the entry in <var>definition</var>'s
+     <span data-x="concept-custom-attribute-definition-lifecycle-callbacks">lifecycle
+     callbacks</span> with key "<code data-x="">disconnectedCallback</code>".</p></li>
+
+     <li><p>Let <var>connectedCallback</var> be the value of the entry in <var>definition</var>'s
+     <span data-x="concept-custom-attribute-definition-lifecycle-callbacks">lifecycle
+     callbacks</span> with key "<code data-x="">connectedCallback</code>".</p></li>
+
+     <li><p>If <var>connectedCallback</var> and <var>disconnectedCallback</var> are null, then
+     return.</p></li>
+
+     <li>
+      <p>Set <var>callback</var> to the following steps:</p>
+
+      <ol>
+       <li><p>If <var>disconnectedCallback</var> is not null, then call
+       <var>disconnectedCallback</var> with no arguments.</p></li>
+
+       <li><p>If <var>connectedCallback</var> is not null, then call <var>connectedCallback</var>
+       with no arguments.</p></li>
+      </ol>
+     </li>
+    </ol>
+   </li>
+
+   <li><p>If <var>callback</var> is null, then return.</p></li>
+
+   <li><p>Add a new <span>callback reaction</span> to <var>attribute</var>'s <span>custom element
+   reaction queue</span>, with callback function <var>callback</var> and arguments
+   <var>args</var>.</p></li>
+
+   <li><p><span>Enqueue an element on the appropriate element queue</span> given
+   <var>attribute</var>.</p></li>
+  </ol>
+  </div>
+
+  <div algorithm>
+  <p>To <dfn export>enqueue a custom attribute upgrade reaction</dfn>, given an attribute
+  <var>attribute</var> and <span>custom attribute definition</span> <var>definition</var>, run the
+  following steps:</p>
+
+  <ol>
+   <li><p>Add a new <span>upgrade reaction</span> to <var>attribute</var>'s <span>custom element
+   reaction queue</span>, with <span>custom attribute definition</span>
+   <var>definition</var>.</p></li>
+
+   <li><p><span>Enqueue an element on the appropriate element queue</span> given
+   <var>attribute</var>.</p></li>
+  </ol>
+  </div>
+
+  </div>
+
 
   <h3 split-filename="semantics-other" id="common-idioms">Common idioms without dedicated elements</h3>
 
@@ -97015,6 +98173,7 @@ interface <dfn interface>Window</dfn> : <span>EventTarget</span> {
   readonly attribute <span>History</span> <span data-x="dom-history">history</span>;
   [Replaceable] readonly attribute <span>Navigation</span> <span data-x="dom-navigation">navigation</span>;
   readonly attribute <span>CustomElementRegistry</span> <span data-x="dom-window-customElements">customElements</span>;
+  readonly attribute <span>CustomAttributeRegistry</span> <span data-x="dom-window-customAttributes">customAttributes</span>;
   [Replaceable] readonly attribute <span>BarProp</span> <span data-x="dom-window-locationbar">locationbar</span>;
   [Replaceable] readonly attribute <span>BarProp</span> <span data-x="dom-window-menubar">menubar</span>;
   [Replaceable] readonly attribute <span>BarProp</span> <span data-x="dom-window-personalbar">personalbar</span>;
@@ -106482,6 +107641,9 @@ interface <dfn interface>NotRestoredReasons</dfn> {
 
      <dt><span data-x="document-custom-element-registry">custom element registry</span></dt>
      <dd>a new <code>CustomElementRegistry</code> object</dd>
+
+     <dt><span data-x="document-custom-attribute-registry">custom attribute registry</span></dt>
+     <dd>a new <code>CustomAttributeRegistry</code> object</dd>
     </dl>
    </li>
 
@@ -113418,6 +114580,9 @@ location.href = '#foo';</code></pre>
 
      <dt><span data-x="document-custom-element-registry">custom element registry</span></dt>
      <dd>a new <code>CustomElementRegistry</code> object</dd>
+
+     <dt><span data-x="document-custom-attribute-registry">custom attribute registry</span></dt>
+     <dd>a new <code>CustomAttributeRegistry</code> object</dd>
     </dl>
    </li>
 
@@ -144918,7 +146083,9 @@ dictionary <dfn dictionary>StorageEventInit</dfn> : <span>EventInit</span> {
    <li>
     <p>Let <var>element</var> be the result of <span data-x="create an element">creating an
     element</span> given <var>document</var>, <var>localName</var>, <var>namespace</var>, null,
-    <var>is</var>, <var>willExecuteScript</var>, and <var>registry</var>.</p>
+    <var>is</var>, <var>willExecuteScript</var>, <var>registry</var>, and the result of <span
+    data-x="look up a custom attribute registry">looking up a custom attribute registry</span>
+    given <var>intendedParent</var>.</p>
 
     <p class="note">This will cause <span data-x="custom element constructor">custom element
     constructors</span> to run, if <var>willExecuteScript</var> is true. However, since we
