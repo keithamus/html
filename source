@@ -2371,6 +2371,7 @@ a.setAttribute('href', 'https://example.com/'); // change the content attribute 
              <dfn data-x-href="https://infra.spec.whatwg.org/#forgiving-base64-decode">forgiving-base64 decode</dfn> algorithms</li>
      <li><dfn data-x-href="https://infra.spec.whatwg.org/#the-exclusive-range">exclusive range</dfn></li>
      <li><dfn data-x-href="https://infra.spec.whatwg.org/#parse-a-json-string-to-an-infra-value">parse a JSON string to an Infra value</dfn></li>
+     <li><dfn data-x-href="https://infra.spec.whatwg.org/#serialize-an-infra-value-to-json-bytes">serialize an Infra value to JSON bytes</dfn></li>
      <li><dfn data-x-href="https://infra.spec.whatwg.org/#html-namespace">HTML namespace</dfn></li>
      <li><dfn data-x-href="https://infra.spec.whatwg.org/#mathml-namespace">MathML namespace</dfn></li>
      <li><dfn data-x-href="https://infra.spec.whatwg.org/#svg-namespace">SVG namespace</dfn></li>
@@ -2657,6 +2658,7 @@ a.setAttribute('href', 'https://example.com/'); // change the content attribute 
      <li>A <dfn data-x-href="https://fetch.spec.whatwg.org/#local-scheme">local scheme</dfn></li>
      <li>A <dfn data-x-href="https://fetch.spec.whatwg.org/#fetch-scheme">fetch scheme</dfn></li>
      <li><dfn data-x-href="https://fetch.spec.whatwg.org/#http-cors-protocol">CORS protocol</dfn></li>
+     <li><dfn data-x-href="https://fetch.spec.whatwg.org/#cors-preflight-request">CORS-preflight request</dfn></li>
      <li><dfn data-x="environment-default-user-agent-value" data-x-href="https://fetch.spec.whatwg.org/#environment-default-user-agent-value">environment default `<code>User-Agent</code>` value</dfn></li>
      <li><dfn data-x-href="https://fetch.spec.whatwg.org/#concept-header-extract-mime-type">extract a MIME type</dfn></li>
      <li><dfn data-x-href="https://fetch.spec.whatwg.org/#legacy-extract-an-encoding">legacy extract an encoding</dfn></li>
@@ -3665,6 +3667,7 @@ a.setAttribute('href', 'https://example.com/'); // change the content attribute 
              <dfn data-x="dom-ProgressEvent-total" data-x-href="https://xhr.spec.whatwg.org/#dom-progressevent-total"><code>total</code></dfn> attributes</li>
      <li>The <dfn data-x-href="https://xhr.spec.whatwg.org/#formdata"><code>FormData</code></dfn> interface, and its associated
              <dfn data-x="FormData entry list" data-x-href="https://xhr.spec.whatwg.org/#concept-formdata-entry-list">entry list</dfn></li>
+     <li><dfn data-x-href="https://xhr.spec.whatwg.org/#group-an-entry-list-by-name">group an entry list by name</dfn></li>
     </ul>
    </dd>
 
@@ -61459,6 +61462,11 @@ form.method === input; // => true</code></pre>
    state.</li>
    <li>The "<dfn attr-value for="form/enctype,button/enctype"><code
    data-x="attr-fs-enctype-text">text/plain</code></dfn>" keyword and corresponding state.</li>
+   <li>The "<dfn attr-value for="form/enctype,button/enctype"><code
+   data-x="attr-fs-enctype-json">application/json</code></dfn>" keyword and corresponding state.</li>
+   <li>The "<dfn attr-value for="form/enctype,button/enctype"><code
+   data-x="attr-fs-enctype-multipart-json">multipart/json</code></dfn>" keyword and corresponding
+   state.</li>
   </ul>
 
   <div algorithm>
@@ -61473,7 +61481,7 @@ form.method === input; // => true</code></pre>
   data-x="attr-fs-enctype-urlencoded">application/x-www-form-urlencoded</code> state.</p>
 
   <div algorithm>
-  <p>The <dfn data-x="concept-fs-enctype">enctype</dfn> of an element is one of those three states.
+  <p>The <dfn data-x="concept-fs-enctype">enctype</dfn> of an element is one of those five states.
   If the element is a <span data-x="concept-submit-button">submit button</span> and has a <code
   data-x="attr-fs-formenctype">formenctype</code> attribute, then the element's <span
   data-x="concept-fs-enctype">enctype</span> is that attribute's state; otherwise, it is the
@@ -64897,6 +64905,58 @@ fur
 
         <p>Let <var>mimeType</var> be `<code>text/plain</code>`.</p>
        </dd>
+
+       <dt><code data-x="attr-fs-enctype-json">application/json</code></dt>
+
+       <dd>
+        <p>Let <var>map</var> be the result of running <span>group an entry list by name</span>
+        given <var>entry list</var>.</p>
+
+        <p>Let <var>body</var> be the result of running <span>serialize an Infra value to JSON
+        bytes</span> given <var>map</var>.</p>
+
+        <p>Let <var>mimeType</var> be `<code>application/json</code>`.</p>
+
+        <p class="note">The body is always UTF-8, regardless of <var>encoding</var>. Newlines are
+        not normalized, and <code>File</code> values are represented by their <code
+        data-x="dom-File-name">name</code>. As `<code>application/json</code>` is not a
+        CORS-safelisted `<code>Content-Type</code>`, a submission to a URL that is not <span>same
+        origin</span> with the <code>form</code>'s <span>node document</span> is preceded by a
+        <span>CORS-preflight request</span>, which the server has to approve.
+        <ref>FETCH</ref></p>
+       </dd>
+
+       <dt><code data-x="attr-fs-enctype-multipart-json">multipart/json</code></dt>
+
+       <dd>
+        <p>Let <var>map</var> be the result of running <span>group an entry list by name</span>
+        given <var>entry list</var>.</p>
+
+        <p>Let <var>json</var> be the result of running <span>serialize an Infra value to JSON
+        bytes</span> given <var>map</var>.</p>
+
+        <p>Let <var>files</var> be a new <span>entry list</span> containing, in order, the <span
+        data-x="form entry">entries</span> of <var>entry list</var> whose <span data-x="form entry
+        value">value</span> is a <code>File</code> object.</p>
+
+        <p>Let <var>body</var> be the result of running the <span><code
+        data-x="">multipart/form-data</code> encoding algorithm</span> with <var>files</var>,
+        <var>encoding</var>, and <var>json</var>.</p>
+
+        <p>Let <var>mimeType</var> be the <span data-x="isomorphic encode">isomorphic
+        encoding</span> of the concatenation of "<code
+        data-x="">multipart/form-data; boundary=</code>" and the <span><code
+        data-x="">multipart/form-data</code> boundary string</span> generated by the <span><code
+        data-x="">multipart/form-data</code> encoding algorithm</span>.</p>
+
+        <p class="note">Non-file entries appear only in the JSON part. Each file entry appears in the
+        JSON part as its <code data-x="dom-File-name">name</code>, and as its own part carrying the
+        file's contents. As the submission's `<code>Content-Type</code>` is <code
+        data-x="attr-fs-enctype-formdata">multipart/form-data</code>, no <span>CORS-preflight
+        request</span> is made; any page can already send a <code
+        data-x="attr-fs-enctype-formdata">multipart/form-data</code> body containing an `<code
+        data-x="">application/json</code>` part using <code>fetch()</code>. <ref>FETCH</ref></p>
+       </dd>
       </dl>
 
       <p><span>Plan to navigate</span> to <var>parsed action</var> given a <span>POST
@@ -65324,8 +65384,8 @@ fur
 
   <div algorithm>
   <p>The <dfn export><code>multipart/form-data</code> encoding algorithm</dfn>, given an <span>entry
-  list</span> <var>entry list</var> and an <span>encoding</span> <var>encoding</var>, is as
-  follows:</p>
+  list</span> <var>entry list</var>, an <span>encoding</span> <var>encoding</var>, and an optional
+  <span>byte sequence</span> <var>json</var>, is as follows:</p>
 
   <ol>
    <li>
@@ -65357,6 +65417,12 @@ fur
 
      <li><p>The order of parts must be the same as the order of fields in <var>entry list</var>.
      Multiple entries with the same name must be treated as distinct fields.</p></li>
+
+     <li><p>If <var>json</var> is given, then the generated <code>multipart/form-data</code>
+     resource must start with an additional part, before those for <var>entry list</var>, whose
+     field name is the empty string, whose body is <var>json</var>, and which has a
+     `<code>Content-Type</code>` header whose value is `<code>application/json</code>`.
+     <var>json</var> is not affected by <var>encoding</var>.</p></li>
 
      <li><p>Field names, field values for non-file fields, and filenames for file fields, in the
      generated <code>multipart/form-data</code> resource must be set to the result of <span
@@ -159052,7 +159118,7 @@ interface <dfn interface>External</dfn> {
      <th> <code data-x="">enctype</code>
      <td> <code data-x="attr-fs-enctype">form</code>
      <td> <span>Entry list</span> encoding type to use for <span>form submission</span>
-     <td> "<code data-x="attr-fs-enctype-urlencoded">application/x-www-form-urlencoded</code>"; "<code data-x="attr-fs-enctype-formdata">multipart/form-data</code>"; "<code data-x="attr-fs-enctype-text">text/plain</code>"
+     <td> "<code data-x="attr-fs-enctype-urlencoded">application/x-www-form-urlencoded</code>"; "<code data-x="attr-fs-enctype-formdata">multipart/form-data</code>"; "<code data-x="attr-fs-enctype-text">text/plain</code>"; "<code data-x="attr-fs-enctype-json">application/json</code>"; "<code data-x="attr-fs-enctype-multipart-json">multipart/json</code>"
     <tr>
      <th> <code data-x="">enterkeyhint</code>
      <td> <span data-x="attr-enterkeyhint">HTML elements</span>
@@ -159111,7 +159177,7 @@ interface <dfn interface>External</dfn> {
      <td> <code data-x="attr-fs-formenctype">button</code>;
           <code data-x="attr-fs-formenctype">input</code>
      <td> <span>Entry list</span> encoding type to use for <span>form submission</span>
-     <td> "<code data-x="attr-fs-enctype-urlencoded">application/x-www-form-urlencoded</code>"; "<code data-x="attr-fs-enctype-formdata">multipart/form-data</code>"; "<code data-x="attr-fs-enctype-text">text/plain</code>"
+     <td> "<code data-x="attr-fs-enctype-urlencoded">application/x-www-form-urlencoded</code>"; "<code data-x="attr-fs-enctype-formdata">multipart/form-data</code>"; "<code data-x="attr-fs-enctype-text">text/plain</code>"; "<code data-x="attr-fs-enctype-json">application/json</code>"; "<code data-x="attr-fs-enctype-multipart-json">multipart/json</code>"
     <tr>
      <th> <code data-x="">formmethod</code>
      <td> <code data-x="attr-fs-formmethod">button</code>;
